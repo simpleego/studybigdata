@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>빅데이터의 이해와 분석 계획</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            line-height: 1.6;
+        }
+        h1, h2, h3, h4 {
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        strong {
+            color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Chapter 01: 빅데이터의 이해</h1>
+
+    <h2>1. 빅데이터 개요 및 활용</h2>
+
+    <h3>(1) 빅데이터 특징</h3>
+
+    <h4>① 빅데이터(Big Data) 개념</h4>
+    <p>빅데이터는 막대한 양(수십 테라바이트 이상)의 정형 및 비정형 데이터입니다.</p>
+    <p>데이터로부터 가치를 추출하고 결과를 분석하여 통찰, 지혜를 얻는 과정입니다.</p>
+    <p>Ackoff, R.L이 도식화한 DIKW 피라미드로 표현할 수 있습니다.</p>
+
+    <h4>DIKW 피라미드</h4>
+    <table>
+        <thead>
+            <tr>
+                <th>피라미드 요소</th>
+                <th>설명</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>데이터 (Data)</strong></td>
+                <td>객관적 사실로서 다른 데이터와의 상관관계가 없는 가공하기 전의 순수한 수치나 기호. 예: 수제비 빅분기 책을 A 사이트에서 30,000원, B 사이트에서 35,000원에 판매.</td>
+            </tr>
+            <tr>
+                <td><strong>정보 (Information)</strong></td>
+                <td>가공, 처리하여 데이터 간의 연관 관계와 함께 의미가 도출된 요소. 예: 수제비 빅분기, 정처기 책은 A 사이트에서 더 싸게 판매.</td>
+            </tr>
+            <tr>
+                <td><strong>지식 (Knowledge)</strong></td>
+                <td>획득된 다양한 정보를 구조화하여 유의미한 정보로 분류하고 일반화시킨 결과물. 예: 서적들은 A 사이트가 싸게 팔기 때문에 수제비 책을 구입할 계획.</td>
+            </tr>
+            <tr>
+                <td><strong>지혜 (Wisdom)</strong></td>
+                <td>근본 원리에 대한 깊은 이해를 바탕으로 도출되는 창의적 아이디어. 예: A 사이트의 다른 상품들도 B 사이트보다 저렴할 것으로 판단.</td>
+            </tr>
+        </tbody>
+    </table>
+    <p>기존의 관리 방법으로는 처리하기 어려운 막대한 양의 데이터를 처리할 때 빅데이터를 사용합니다.</p>
+
+    <h4>② 데이터의 양을 측정하는 단위</h4>
+    <table>
+        <thead>
+            <tr>
+                <th>기호</th>
+                <th>이름</th>
+                <th>값</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>KB</td>
+                <td>킬로바이트</td>
+                <td>1KB=10<sup>3</sup>Bytes</td>
+            </tr>
+            <tr>
+                <td>MB</td>
+                <td>메가바이트</td>
+                <td>1MB=10<sup>3</sup>KB=10<sup>6</sup>Bytes</td>
+            </tr>
+            <tr>
+                <td>GB</td>
+                <td>기가바이트</td>
+                <td>1GB=10<sup>3</sup>MB=10<sup>9</sup>Bytes</td>
+            </tr>
+            <tr>
+                <td>TB</td>
+                <td>테라바이트</td>
+                <td>1TB=10<sup>3</sup>GB=10<sup>12</sup>Bytes</td>
+            </tr>
+            <tr>
+                <td>PB</td>
+                <td>페타바이트</td>
+                <td>1PB=10<sup>3</sup>TB=10<sup>15</sup>Bytes</td>
+            </tr>
+            <tr>
+                <td>EB</td>
+                <td>엑사바이트</td>
+                <td>1EB=10<sup>3</sup>PB=10<sup>18</sup>Bytes</td>
+            </tr>
+            <tr>
+                <td>ZB</td>
+                <td>제타바이트</td>
+                <td>1ZB=10<sup>3</sup>EB=10<sup>21</sup>Bytes</td>
+            </tr>
+            <tr>
+                <td>YB</td>
+                <td>요타바이트</td>
+                <td>1YB=10<sup>3</sup>ZB=10<sup>24</sup>Bytes</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>(2) 빅데이터 특성</h3>
+    <p>빅데이터는 전통적으로 3V (Volume, Variety, Velocity)의 특성이 있으며, 최근에는 4V (Value 추가), 5V (Veracity 추가), 7V (Validity, Volatility 추가)로 확장되고 있습니다.</p>
+    <table>
+        <thead>
+            <tr>
+                <th>특성</th>
+                <th>설명</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>규모 (Volume)</strong></td>
+                <td>빅데이터 분석 규모와 관련된 특징으로, ICT 기술 발전으로 디지털 정보량이 기하급수적으로 증가하는 것을 의미합니다.</td>
+            </tr>
+            <tr>
+                <td><strong>다양성 (Variety)</strong></td>
+                <td>빅데이터 자원 유형에 관련된 특징으로, 정형 데이터뿐만 아니라 비정형, 반정형 데이터를 포함합니다.</td>
+            </tr>
+            <tr>
+                <td><strong>속도 (Velocity)</strong></td>
+                <td>빅데이터 수집·분석·활용 속도에 관련된 특징으로, 실시간성 정보의 생성 속도 증가에 따라 처리 속도 가속화가 요구됩니다.</td>
+            </tr>
+            <tr>
+                <td><strong>가치 (Value)</strong></td>
+                <td>빅데이터 수집 데이터를 통해 얻을 수 있는 가치로, 비즈니스나 연구에 활용되어 유용한 가치를 끌어낼 수 있는지를 의미합니다.</td>
+            </tr>
+            <tr>
+                <td><strong>신뢰성 (Veracity)</strong></td>
+                <td>빅데이터 수집 대상 데이터가 가지는 신뢰에 관련된 특징으로, 노이즈 및 오류 제거를 통해 데이터 품질과 신뢰성을 높여야 합니다.</td>
+            </tr>
+            <tr>
+                <td><strong>정확성 (Validity)</strong></td>
+                <td>빅데이터 수집 대상 데이터가 가지는 유효성과 정확성으로, 질 높은 데이터를 활용한 정확한 분석이 중요합니다.</td>
+            </tr>
+            <tr>
+                <td><strong>휘발성 (Volatility)</strong></td>
+                <td>빅데이터 수집 대상 데이터가 의미를 가지는 기간으로, 데이터가 얼마나 오래 저장되고 타당하게 쓰일 수 있는지에 관한 사항입니다.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>(3) 데이터 지식경영</h3>
+    <p>빅데이터는 장기적인 관점에서 유용한 가치를 창출해야 합니다.</p>
+    <p>데이터 기반 지식경영의 핵심은 암묵지와 형식지의 상호작용에 있습니다.</p>
+    <h4>지식 구분</h4>
+    <table>
+        <thead>
+            <tr>
+                <th>구분</th>
+                <th>설명</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>암묵지 (Tacit Knowledge)</strong></td>
+                <td>학습과 경험을 통해 개인에게 체화되어 있지만 겉으로 드러나지 않는 지식입니다. 예: 수영, 태권도.</td>
+            </tr>
+            <tr>
+                <td><strong>형식지 (Explicit Knowledge)</strong></td>
+                <td>문서나 매뉴얼처럼 형상화된 지식으로 전달과 공유가 용이합니다. 예: 수험서, 소프트웨어 설치 매뉴얼.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h4>데이터 지식경영 상호작용 (SECI 모델)</h4>
+    <table>
+        <thead>
+            <tr>
+                <th>상호작용</th>
+                <th>내용</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>공통화 (Socialization)</strong></td>
+                <td>다른 사람과의 상호작용을 통해 개인이 암묵지를 습득하는 단계.</td>
+            </tr>
+            <tr>
+                <td><strong>표출화 (Externalization)</strong></td>
+                <td>개인에게 내재된 경험을 객관적인 데이터(문서, 매체)로 저장하거나 가공, 분석하는 과정.</td>
+            </tr>
+            <tr>
+                <td><strong>연결화 (Combination)</strong></td>
+                <td>형식지가 상호 결합하여 새로운 형식지를 창출하는 과정.</td>
+            </tr>
+            <tr>
+                <td><strong>내면화 (Internalization)</strong></td>
+                <td>행동과 실천교육 등을 통해 형식지가 개인의 암묵지로 체화되는 단계.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>(4) 빅데이터 가치</h3>
+    <h4>① 빅데이터 가치 산정이 어려운 이유</h4>
+    <p>데이터 활용 방식의 다양화, 새로운 가치 창출, 분석기술의 발전으로 인해 빅데이터의 가치를 정확하게 산정하기 어렵습니다.</p>
+    <table>
+        <thead>
+            <tr>
+                <th>원인</th>
+                <th>설명</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>데이터 활용 방식의 다양화</strong></td>
+                <td>데이터의 재사용, 재조합, 다목적용 개발 등으로 특정 데이터를 언제, 어디서, 누가 활용할지 알 수 없어 가치 산정이 어렵습니다.</td>
+            </tr>
+            <tr>
+                <td><strong>새로운 가치 창출</strong></td>
+                <td>데이터의 창의적 조합으로 기존에 풀 수 없던 문제를 해결하고, 기존에 없던 가치를 창출하여 가치 산정이 어렵습니다.</td>
+            </tr>
+            <tr>
+                <td><strong>분석기술의 급속한 발전</strong></td>
+                <td>저렴한 비용으로 분석이 가능해지면서 활용도가 증가하여 가치 산정이 어렵습니다.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h4>② 빅데이터 영향</h4>
+    <p>빅데이터의 가치를 활용함으로써 기업, 정부, 개인이 스마트해지고 있습니다.</p>
+    <table>
+        <thead>
+            <tr>
+                <th>대상</th>
+                <th>영향</th>
+                <th>설명</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>기업</strong></td>
+                <td>혁신 수단 제공, 경쟁력 강화, 생산성 향상</td>
+                <td>소비자의 행동 분석, 시장 변동 예측을 통해 비즈니스 모델을 혁신하거나 신사업을 발굴합니다.</td>
+            </tr>
+            <tr>
+                <td><strong>정부</strong></td>
+                <td>환경 탐색, 상황 분석, 미래 대응 가능</td>
+                <td>사회 변화를 추정하고 각종 재해 관련 정보를 추출하며 미래 의제를 도출합니다.</td>
+            </tr>
+            <tr>
+                <td><strong>개인</strong></td>
+                <td>목적에 따른 활용, 적시에 필요한 정보 획득</td>
+                <td>빅데이터 서비스를 저렴한 비용으로 활용하여 필요한 정보를 얻습니다.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h4>③ 빅데이터 위기 요인 및 통제 방안</h4>
+    <p>빅데이터는 유용한 가치를 주는 동시에 사생활 침해, 책임 원칙 훼손, 데이터 오용과 같은 부정적인 영향을 줄 수 있어 통제 방안이 필요합니다.</p>
+    <table>
+        <thead>
+            <tr>
+                <th>위기 요인</th>
+                <th>통제 방안</th>
+                <th>설명</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>사생활 침해</strong></td>
+                <td>책임의 강조</td>
+                <td>개인정보를 사용하는 사용자의 '책임'을 통해 해결하는 방안을 강구합니다.</td>
+            </tr>
+            <tr>
+                <td><strong>책임 원칙 훼손</strong></td>
+                <td>결과 기반의 책임 적용</td>
+                <td>예측 알고리즘의 오류 가능성을 고려하여 불이익을 최소화하는 장치를 마련합니다.</td>
+            </tr>
+            <tr>
+                <td><strong>데이터 오용</strong></td>
+                <td>알고리즘에 대한 접근 허용</td>
+                <td>예측 알고리즘의 부당함을 반증할 수 있는 '알고리즘에 대한 접근권'을 제공합니다.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h4>④ 분석 가치 에스컬레이터 (Analytic Value Escalator)</h4>
+    <p>가트너가 빅데이터의 가치를 4단계로 정의한 기법으로, 난도가 높은 분석일수록 더 많은 가치를 창출합니다.</p>
+    <table>
+        <thead>
+            <tr>
+                <th>순서</th>
+                <th>단계</th>
+                <th>질문</th>
+                <th>설명</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td><strong>묘사 분석 (Descriptive Analysis)</strong></td>
+                <td>어떤 일이 일어났는가?</td>
+                <td>과거와 현재에 일어난 일을 확인하는 가장 기본적인 분석 단계입니다.</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td><strong>진단 분석 (Diagnostic Analysis)</strong></td>
+                <td>왜 일어났는가?</td>
+                <td>묘사 분석에서 찾아낸 현상의 원인을 파악하는 단계입니다.</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td><strong>예측 분석 (Predictive Analysis)</strong></td>
+                <td>무슨 일이 일어날 것인가?</td>
+                <td>데이터를 통해 미래나 고객 행동을 예측하는 단계입니다.</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td><strong>처방 분석 (Prescriptive Analysis)</strong></td>
+                <td>우리는 무엇을 해야 할 것인가?</td>
+                <td>예측을 바탕으로 최적의 행동을 결정하는 단계입니다.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr>
+
+    <h2>2. 빅데이터 산업 및 조직</h2>
+
+    <h3>(1) 빅데이터 조직 설계</h3>
+    <h4>① 빅데이터 업무 프로세스</h4>
+    <p>빅데이터 도입 및 운영은 도입 기획, 시스템 구축, 서비스 운영의 단계로 진행됩니다.</p>
+    <table>
+        <thead>
+            <tr>
+                <th>단계</th>
+                <th>설명</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>빅데이터 도입 단계</strong></td>
+                <td>빅데이터 시스템 구축을 위한 기획, 기술 검토, 조직 구성, 예산 확보 등을 수행합니다.</td>
+            </tr>
+            <tr>
+                <td><strong>빅데이터 구축 단계</strong></td>
+                <td>요구사항 분석, 설계, 구현, 테스트를 통해 빅데이터 플랫폼을 구축합니다.</td>
+            </tr>
+            <tr>
+                <td><strong>빅데이터 운영 단계</strong></td>
+                <td>구축된 시스템을 인수하여 운영 계획을 수립하고, 플랫폼, 데이터, 분석 모델을 운영합니다.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h4>② 조직 구조 유형</h4>
+    <p>빅데이터 조직 구조는 집중 구조, 기능 구조, 분산 구조로 나뉩니다.</p>
+    <table>
+        <thead>
+            <tr>
+                <th>유형</th>
+                <th>설명</th>
+                <th>장점</th>
+                <th>단점</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>집중 구조</strong></td>
+                <td>전사 분석 업무를 별도의 분석 전담 조직에서 담당합니다.</td>
+                <td>전략적 중요도에 따라 우선순위를 정해 진행이 가능합니다.</td>
+                <td>현업 부서의 분석 업무와 중복 및 이원화 가능성이 있습니다.</td>
+            </tr>
+            <tr>
+                <td><strong>기능 구조</strong></td>
+                <td>별도 분석 조직 없이 해당 업무 부서에서 직접 분석을 수행합니다.</td>
+                <td>-</td>
+                <td>전사적 핵심 분석이 어렵고 과거에 국한된 분석을 수행하게 될 수 있습니다.</td>
+            </tr>
+            <tr>
+                <td><strong>분산 구조</strong></td>
+                <td>분석 조직 인력을 현업 부서에 직접 배치하여 분석 업무를 수행합니다.</td>
+                <td>신속한 피드백과 베스트 프랙티스 공유가 가능합니다.</td>
+                <td>역할 분담이 명확하지 않으면 업무 과다와 이원화 가능성이 있습니다.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>(2) 데이터 사이언티스트 요구 역량</h3>
+    <p>데이터 사이언티스트는 소프트 스킬과 하드 스킬을 모두 필요로 합니다.</p>
+    <table>
+        <thead>
+            <tr>
+                <th>구분</th>
+                <th>스킬</th>
+                <th>설명</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>소프트 스킬 (Soft Skill)</strong></td>
+                <td>협력 능력, 통찰력, 전달력</td>
+                <td>커뮤니케이션, 논리적 비판, 창의적 사고, 스토리텔링 능력 등을 포함합니다.</td>
+            </tr>
+            <tr>
+                <td><strong>하드 스킬 (Hard Skill)</strong></td>
+                <td>분석기술의 숙련도, 이론적 지식</td>
+                <td>최적 분석 설계, 빅데이터 관련 기법 및 방법론 습득 등 실질적인 기술을 포함합니다.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>(3) 데이터 거버넌스 (Data Governance)</h3>
+    <p>데이터 거버넌스는 기업에서 사용하는 데이터의 가용성, 유용성, 통합성, 보안성을 관리하기 위한 정책과 프로세스입니다.</p>
+    <h4>구성요소</h4>
+    <ul>
+        <li><strong>원칙 (Principle):</strong> 데이터를 유지·관리하기 위한 지침과 가이드.</li>
+        <li><strong>조직 (Organization):</strong> 데이터를 관리할 조직의 역할과 책임(R&R).</li>
+        <li><strong>프로세스 (Process):</strong> 데이터 관리를 위한 활동과 체계.</li>
+    </ul>
+
+    <h3>(4) 분석 준비도(Readiness) 및 성숙도(Maturity)</h3>
+    <h4>① 데이터 분석 준비도 프레임워크</h4>
+    <p>기업의 데이터 분석 도입 수준을 파악하기 위한 진단 방법으로 6가지 영역이 있습니다.</p>
+    <ul>
+        <li>분석 업무 파악</li>
+        <li>인력 및 조직</li>
+        <li>분석 기법</li>
+        <li>분석 데이터</li>
+        <li>분석 문화</li>
+        <li>IT 인프라</li>
+    </ul>
+
+    <h4>② 조직평가를 위한 성숙도 단계</h4>
+    <p>기업의 분석 수준을 평가하는 4단계 모델입니다.</p>
+    <table>
+        <thead>
+            <tr>
+                <th>단계</th>
+                <th>설명</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>도입 단계</strong></td>
+                <td>분석을 시작해 환경과 시스템을 구축하는 단계.</td>
+            </tr>
+            <tr>
+                <td><strong>활용 단계</strong></td>
+                <td>분석 결과를 실제 업무에 적용하는 단계.</td>
+            </tr>
+            <tr>
+                <td><strong>확산 단계</strong></td>
+                <td>전사 차원에서 분석을 관리하고 공유하는 단계.</td>
+            </tr>
+            <tr>
+                <td><strong>최적화 단계</strong></td>
+                <td>분석을 진화시켜 혁신 및 성과 향상에 기여하는 단계.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h4>③ 사분면 분석 (Analytics Quadrant)</h4>
+    <p>성숙도와 준비도에 따라 기업을 4가지 유형으로 구분하여 개선 방안을 수립합니다.</p>
+    <table>
+        <thead>
+            <tr>
+                <th>유형</th>
+                <th>설명</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>준비형</strong></td>
+                <td>낮은 준비도와 낮은 성숙도 수준. 사전 준비가 필요한 기업.</td>
+            </tr>
+            <tr>
+                <td><strong>정착형</strong></td>
+                <td>준비도는 낮으나, 제한적으로 분석을 사용하고 있어 정착이 필요한 기업.</td>
+            </tr>
+            <tr>
+                <td><strong>도입형</strong></td>
+                <td>분석 기법 등은 부족하지만 준비도가 높아 바로 도입할 수 있는 기업.</td>
+            </tr>
+            <tr>
+                <td><strong>확산형</strong></td>
+                <td>필요한 구성요소를 갖추고 있어 지속적인 확산이 필요한 기업.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr>
+
+    <h1>Chapter 02: 데이터 분석 계획</h1>
+
+    <h2>1. 분석 방안 수립</h2>
+
+    <h3>(1) 하향식 접근 방식 (Top Down Approach)</h3>
+    <p><strong>개념:</strong> 분석 과제가 이미 정해져 있고, 이에 대한 해법을 찾기 위해 체계적으로 분석하는 방법입니다.</p>
+    <p><strong>절차:</strong> 문제 탐색 → 문제 정의 → 해결방안 탐색 → 타당성 검토 → 선택의 과정을 거칩니다.</p>
+    <table>
+        <thead>
+            <tr>
+                <th>단계</th>
+                <th>설명</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>1. 문제 탐색 (Problem Discovery)</strong></td>
+                <td>비즈니스 모델을 기반으로 문제를 탐색하고 분석 기회를 발굴합니다.</td>
+            </tr>
+            <tr>
+                <td><strong>2. 문제 정의 (Problem Definition)</strong></td>
+                <td>비즈니스 문제를 데이터 문제로 변환하여 정의하고, 필요한 데이터 및 기법을 정의합니다.</td>
+            </tr>
+            <tr>
+                <td><strong>3. 해결방안 탐색 (Solution Search)</strong></td>
+                <td>정의된 문제를 해결하기 위한 다양한 분석 방안을 탐색합니다.</td>
+            </tr>
+            <tr>
+                <td><strong>4. 타당성 검토 (Feasibility Study)</strong></td>
+                <td>경제적, 데이터 및 기술적 타당성을 평가합니다.</td>
+            </tr>
+            <tr>
+                <td><strong>5. 선택 (Selection)</strong></td>
+                <td>타당성에 입각하여 최적의 대안을 선택하고 프로젝트화합니다.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>(2) 상향식 접근 방식 (Bottom Up Approach)</h3>
+    <p><strong>개념:</strong> 문제 정의가 어려운 경우, 데이터를 기반으로 문제를 지속적으로 개선하는 방식입니다. 디자인 사고(Design Thinking) 접근법을 사용합니다.</p>
+    <p><strong>절차:</strong> 프로세스 분류 → 프로세스 흐름 분석 → 분석 요건 식별 → 분석 요건 정의의 과정을 거칩니다.</p>
+
+    <h3>(3) 대상별 분석 기획 유형</h3>
+    <p>분석의 대상(What)과 방법(How)을 아는지 모르는지에 따라 4가지 유형으로 분류됩니다.</p>
+    <table>
+        <thead>
+            <tr>
+                <th>유형</th>
+                <th>대상(What)</th>
+                <th>방법(How)</th>
+                <th>설명</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>최적화 (Optimization)</strong></td>
+                <td>Known</td>
+                <td>Known</td>
+                <td>대상과 방법을 모두 알고 있을 때, 개선을 통해 최적화를 수행합니다.</td>
+            </tr>
+            <tr>
+                <td><strong>솔루션 (Solution)</strong></td>
+                <td>Known</td>
+                <td>Un-Known</td>
+                <td>대상은 알지만 방법을 모를 때, 해당 분석 주제에 대한 솔루션을 찾아냅니다.</td>
+            </tr>
+            <tr>
+                <td><strong>통찰 (Insight)</strong></td>
+                <td>Un-Known</td>
+                <td>Known</td>
+                <td>방법은 알지만 대상이 명확하지 않을 때, 새로운 지식(통찰)을 도출합니다.</td>
+            </tr>
+            <tr>
+                <td><strong>발견 (Discovery)</strong></td>
+                <td>Un-Known</td>
+                <td>Un-Known</td>
+                <td>대상과 방법을 모두 모를 때, 분석 대상 자체를 새롭게 도출합니다.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>(4) 분석 과제 우선순위 평가</h3>
+    <p>정의된 데이터 과제의 실행 순서를 정하기 위해 <strong>시급성</strong>과 <strong>난이도</strong>를 기준으로 평가합니다. 시급성은 ROI 관점의 비즈니스 효과와, 난이도는 투자 비용 요소와 관련이 깊습니다.</p>
+    <ul>
+        <li>가장 우선순위가 높은 영역: <strong>III 사분면</strong> (시급성: 현재, 난이도: 쉬움)</li>
+        <li>적용 우선순위 (시급성 기준): III → I → IV → II</li>
+        <li>적용 우선순위 (난이도 기준): III → IV → I → II</li>
+    </ul>
+
+    <h3>(5) 빅데이터 분석 방법론</h3>
+    <h4>① KDD 분석 방법론</h4>
+    <p><strong>개념:</strong> 1996년 Fayyad가 프로파일링 기술을 기반으로 통계적 패턴이나 지식을 찾기 위해 정리한 방법론입니다.</p>
+    <p><strong>절차:</strong> 데이터 세트 선택 → 데이터 전처리 → 데이터 변환 → 데이터 마이닝 → 데이터 마이닝 결과 평가</p>
+
+    <h4>② CRISP-DM 분석 방법론</h4>
+    <p><strong>개념:</strong> 비즈니스 이해를 바탕으로 데이터 분석 목적의 6단계로 진행되는 데이터 마이닝 방법론입니다.</p>
+    <p><strong>절차:</strong> 업무 이해 → 데이터 이해 → 데이터 준비 → 모델링 → 평가 → 전개. 단계 간 피드백을 통해 완성도를 높입니다.</p>
+
+    <h4>③ SEMMA 분석 방법론</h4>
+    <p><strong>개념:</strong> SAS사가 주도한 통계 중심의 5단계 방법론입니다.</p>
+    <p><strong>절차:</strong> 샘플링(Sampling) → 탐색(Exploration) → 수정(Modification) → 모델링(Modeling) → 검증(Assessment)</p>
+
+</body>
+</html>
