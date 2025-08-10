@@ -584,15 +584,7 @@
 
 **▲ 하둡 에코시스템**
 
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-<meta charset="UTF-8">
-<title>하둡 에코시스템 기술</title>
-</head>
-<body>
-
-  <table border="1">
+<table border="1">
     <thead>
       <tr>
         <th style="width: 35%;">구분</th>
