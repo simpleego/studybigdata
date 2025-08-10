@@ -595,9 +595,9 @@
   <table border="1">
     <thead>
       <tr>
-        <th style="width: 15%;">구분</th>
-        <th style="width: 20%;">기술</th>
-        <th>설명</th>
+        <th style="width: 35%;">구분</th>
+        <th style="width: 25%;">기술</th>
+        <th style="width: 30%;">설명</th>
       </tr>
     </thead>
     <tbody>
