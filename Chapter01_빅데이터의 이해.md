@@ -580,6 +580,6 @@
 하둡 에코시스템은 하둡 프레임워크를 이루고 있는 다양한 서브 프로젝트들의 모임이다.
 하둡 에코시스템은 수집, 저장, 처리 기술과 분석, 실시간 SQL 질의 기술로 구분할 수 있다.
 
-<img width="800"  alt="image" src="https://github.com/user-attachments/assets/27c28963-6f96-438a-8212-ad37ea8f84e6" />
+<img width="600"  alt="image" src="https://github.com/user-attachments/assets/27c28963-6f96-438a-8212-ad37ea8f84e6" />
 
 **▲ 하둡 에코시스템**
