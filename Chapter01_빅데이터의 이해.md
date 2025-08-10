@@ -525,7 +525,7 @@
 
 • 성숙도와 준비도에 따라 4가지 유형으로 구분하여 분석 수준에 대한 목표 방향을 정의하고 개선 방향을 수립한다.
 
-<img width="800" alt="image" src="https://github.com/user-attachments/assets/5cd19047-3714-449b-811d-a8c2aed74f1c" /> 
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/5cd19047-3714-449b-811d-a8c2aed74f1c" /> 
 
 **▲ 사분면 분석(Analytic Quardrant)**
 
