@@ -580,15 +580,6 @@
 하둡 에코시스템은 하둡 프레임워크를 이루고 있는 다양한 서브 프로젝트들의 모임이다.
 하둡 에코시스템은 수집, 저장, 처리 기술과 분석, 실시간 SQL 질의 기술로 구분할 수 있다.
 
-\<br\>
+<img width="800"  alt="image" src="https://github.com/user-attachments/assets/27c28963-6f96-438a-8212-ad37ea8f84e6" />
 
-| | | | | |
-| :--- | :--- | :--- | :--- | :--- |
-| **워크플로우**\<br\>(Oozie, Airflow, Azkaban, NiFi) | **데이터 시각화**\<br\>(Zeppelin) | **대화형 질의 처리**\<br\>(Impala, Tajo) | | **데이터 웨어하우스**\<br\>(Hive, Tajo) |
-| | | **스크립트 처리**\<br\>(Pig) | **머신러닝**\<br\>(Mahout) | **인메모리 처리**\<br\>(Spark) |
-| | **데이터 직렬화**\<br\>(Avro, Thrift) | **분산 데이터 배치 처리**\<br\>(MapReduce) | | **분산 클러스터 리소스 관리**\<br\>(YARN, Mesos) |
-| **분산 코디네이터**\<br\>(Zookeeper) | | **분산 데이터베이스**\<br\>(HBase) | | **컬럼 기반 스토리지**\<br\>(Kudu) |
-| | | **분산 데이터 저장**\<br\>(HDFS) | | |
-| | **스트리밍 데이터 수집**\<br\>(Chukwa, Flume, Scribe) | **DBMS 데이터 수집**\<br\>(Sqoop, Hiho) | **분산 메시지 처리**\<br\>(Kafka) | |
-
-\<p align="center"\>▲ 하둡 에코시스템\</p\>
+**▲ 하둡 에코시스템**
