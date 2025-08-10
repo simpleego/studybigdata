@@ -589,15 +589,6 @@
 <head>
 <meta charset="UTF-8">
 <title>하둡 에코시스템 기술</title>
-<style>
-  body { font-family: sans-serif; }
-  table { border-collapse: collapse; width: 100%; }
-  th, td { border: 1px solid #ccc; padding: 8px; text-align: left; vertical-align: top; }
-  th { background-color: #f2f2f2; text-align: center; }
-  .inner-table { width: 100%; border: 1px solid #e0e0e0; }
-  .inner-table td { border: 1px solid #e0e0e0; }
-  .tech-col { width: 25%; }
-</style>
 </head>
 <body>
 
