@@ -584,17 +584,81 @@
 
 **▲ 하둡 에코시스템**
 
-| 구분 | 기술 | 설명 |
-| :--- | :--- | :--- |
-| **비정형데이터 수집** | **처크와**(Chukwa) | 분산된 각 서버에서 에이전트를 실행하고, 컬렉터(Collector)가 에이전트로부터 데이터를 받아 HDFS에 저장하는 기술 |
-| **비정형데이터 수집** | **플럼**(Flume) | 많은 양의 로그 데이터를 효율적으로 수집, 집계, 이동하기 위해 이벤트(Event)와 에이전트(Agent)를 활용하는 기술다수의 서버로부터 실시간으로 스트리밍되는 로그 데이터를 수집하여 분산 시스템에 데이터를 저장하는 대용량 실시간 로그 수집 기술최종 데이터는 HDFS 외에 다양한 저장소를 활용 가능HDFS에 저장하기 위해서는 JNI를 이용 |
-| **비정형데이터 수집** | **스크라이브**(Scribe) | 다수의 서버로부터 실시간으로 스트리밍되는 로그 데이터를 수집하여 분산 시스템에 데이터를 저장하는 대용량 실시간 로그 수집 기술<br>최종 데이터는 HDFS 외에 다양한 저장소를 활용 가능<br>HDFS에 저장하기 위해서는 JNI를 이용|
-| **정형데이터 수집** | **스쿱**(Sqoop;SQL-to-Hadoop) | 대용량 데이터 전송 솔루션커넥터(Connector)를 사용하여 관계형 데이터베이스 시스템(RDBMS)에서 하둡 파일 시스템(HDFS)으로 데이터를 수집하거나, 하둡 파일 시스템에서 관계형 데이터베이스로 데이터를 보내는 기술Oracle, MS-SQL, DB2와 같은 상용 RDBMS와 MySQL과 같은 오픈 소스 RDBMS 지원 |
-| **정형데이터 수집** | **히호**(Hiho) | 스쿱(Sqoop)과 같은 대용량 데이터 전송 솔루션이며, 현재 깃허브에서 공개되어 있음하둡에서 데이터를 가져오기 위한 SQL을 지정할 수 있으며, JDBC 인터페이스를 지원, 현재는 Oracle, MySQL의 데이터만 전송 지원 |
-| **분산데이터 저장** | **HDFS**(HadoopDistributedFile System) | 대용량 파일을 분산된 서버에 저장하고, 그 저장된 데이터를 빠르게 처리할 수 있게 하는 하둡 분산 파일 시스템범용 하드웨어 기반, 클러스터에서 실행되고 데이터 접근 패턴을 스트리밍 방식으로 지원다중 복제, 대량 파일 저장, 온라인 변경, 범용서버 기반, 자동복구 특성이 있음네임 노드, 보조 네임 노드, 데이터 노드로 구성 
-| **네임 노드**(Name Node) | HDFS 상의 모든 메타데이터를 관리하며 마스터/슬레이브 구조에서 마스터 역할 수행네임 노드는 파일 시스템의 디렉터리, 파일명, 파일 블록 등 네임 스페이스를 관리하는 일종의 마스터 역할을 하며 슬레이브에 해당하는 데이터 노드에게 입출력에 관련된 작업을 지시하고 데이터 노드를 관리함 |
-| **보조 네임 노드**(Secondary Name Node) | HDFS 상태 모니터링을 보조주기적으로 네임 노드의 파일 시스템 이미지를 스냅샷으로 생성 |
-| **데이터 노드**(Data Node) | HDFS의 슬레이브 노드로, 데이터 입출력 요청을 처리데이터 유실 방지를 위해 블록을 3중으로 복제하여 저장 |
-|
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>하둡 에코시스템 기술</title>
+<style>
+  body { font-family: sans-serif; }
+  table { border-collapse: collapse; width: 100%; }
+  th, td { border: 1px solid #ccc; padding: 8px; text-align: left; vertical-align: top; }
+  th { background-color: #f2f2f2; text-align: center; }
+  .inner-table { width: 100%; border: 1px solid #e0e0e0; }
+  .inner-table td { border: 1px solid #e0e0e0; }
+  .tech-col { width: 25%; }
+</style>
+</head>
+<body>
 
+  <table border="1">
+    <thead>
+      <tr>
+        <th style="width: 15%;">구분</th>
+        <th style="width: 20%;">기술</th>
+        <th>설명</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td rowspan="3">비정형<br>데이터 수집</td>
+        <td><b>처크와</b><br>(Chukwa)</td>
+        <td>분산된 각 서버에서 에이전트를 실행하고, 컬렉터(Collector)가 에이전트로부터 데이터를 받아 HDFS에 저장하는 기술</td>
+      </tr>
+      <tr>
+        <td><b>플럼</b><br>(Flume)</td>
+        <td>많은 양의 로그 데이터를 효율적으로 수집, 집계, 이동하기 위해 이벤트(Event)와 에이전트(Agent)를 활용하는 기술<br>다수의 서버로부터 실시간으로 스트리밍되는 로그 데이터를 수집하여 분산 시스템에 데이터를 저장하는 대용량 실시간 로그 수집 기술<br>최종 데이터는 HDFS 외에 다양한 저장소를 활용 가능<br>HDFS에 저장하기 위해서는 JNI를 이용</td>
+      </tr>
+      <tr>
+        <td><b>스크라이브</b><br>(Scribe)</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td rowspan="2">정형<br>데이터 수집</td>
+        <td><b>스쿱</b><br>(Sqoop;<br>SQL-to-Hadoop)</td>
+        <td>대용량 데이터 전송 솔루션<br>커넥터(Connector)를 사용하여 관계형 데이터베이스 시스템(RDBMS)에서 하둡 파일 시스템(HDFS)으로 데이터를 수집하거나, 하둡 파일 시스템에서 관계형 데이터베이스로 데이터를 보내는 기술<br>Oracle, MS-SQL, DB2와 같은 상용 RDBMS와 MySQL과 같은 오픈 소스 RDBMS 지원</td>
+      </tr>
+      <tr>
+        <td><b>히호</b><br>(Hiho)</td>
+        <td>스쿱(Sqoop)과 같은 대용량 데이터 전송 솔루션이며, 현재 깃허브에서 공개되어 있음<br>하둡에서 데이터를 가져오기 위한 SQL을 지정할 수 있으며, JDBC 인터페이스를 지원, 현재는 Oracle, MySQL의 데이터만 전송 지원</td>
+      </tr>
+      <tr>
+        <td>분산<br>데이터 저장</td>
+        <td><b>HDFS</b><br>(Hadoop Distributed<br>File System)</td>
+        <td>
+          대용량 파일을 분산된 서버에 저장하고, 그 저장된 데이터를 빠르게 처리할 수 있게 하는 하둡 분산 파일 시스템<br>
+          범용 하드웨어 기반, 클러스터에서 실행되고 데이터 접근 패턴을 스트리밍 방식으로 지원<br>
+          다중 복제, 대량 파일 저장, 온라인 변경, 범용서버 기반, 자동복구 특성이 있음<br>
+          네임 노드, 보조 네임 노드, 데이터 노드로 구성
+          <br><br>
+          <table class="inner-table">
+            <tr>
+              <td class="tech-col"><b>네임 노드</b><br>(Name Node)</td>
+              <td>HDFS 상의 모든 메타데이터를 관리하며 마스터/슬레이브 구조에서 마스터 역할 수행<br>네임 노드는 파일 시스템의 디렉터리, 파일명, 파일 블록 등 네임 스페이스를 관리하는 일종의 마스터 역할을 하며 슬레이브에 해당하는 데이터 노드에게 입출력에 관련된 작업을 지시하고 데이터 노드를 관리함</td>
+            </tr>
+            <tr>
+              <td class="tech-col"><b>보조 네임 노드</b><br>(Secondary Name Node)</td>
+              <td>HDFS 상태 모니터링을 보조<br>주기적으로 네임 노드의 파일 시스템 이미지를 스냅샷으로 생성</td>
+            </tr>
+            <tr>
+              <td class="tech-col"><b>데이터 노드</b><br>(Data Node)</td>
+              <td>HDFS의 슬레이브 노드로, 데이터 입출력 요청을 처리<br>데이터 유실 방지를 위해 블록은 3중으로 복제하여 저장</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 
+</body>
+</html>
