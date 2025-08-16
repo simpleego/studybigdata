@@ -72,40 +72,56 @@ plt.show()
 
 ---
 
-네, LOF(Local Outlier Factor)에는 명확한 수학적 공식이 있습니다. LOF는 각 데이터 포인트의 **지역 밀도(local density)**를 주변 이웃들과 비교하여 이상값 여부를 판단합니다. 아래에 LOF 계산의 핵심 공식과 단계별 설명을 정리해볼게요.
+## 📐 LOF 공식 (LaTeX 마크다운)
 
----
+### ✅ LOF 점수 계산
 
-## 📐 LOF 계산 공식
-
-LOF는 다음과 같은 수식으로 정의됩니다:
-
-\[
+```markdown
+$$
 \text{LOF}_k(p) = \frac{1}{|N_k(p)|} \sum_{o \in N_k(p)} \frac{\text{LRD}_k(o)}{\text{LRD}_k(p)}
-\]
+$$
+```
 
-- \( p \): LOF를 계산할 대상 데이터 포인트
-- \( N_k(p) \): \( p \)의 k-최근접 이웃
-- \( \text{LRD}_k(p) \): \( p \)의 지역 도달 가능 밀도 (Local Reachability Density)
+- \( p \): 대상 데이터 포인트  
+- \( N_k(p) \): \( p \)의 k-최근접 이웃  
+- \( \text{LRD}_k(p) \): \( p \)의 Local Reachability Density
 
 ---
 
-## 🧠 LOF 계산 단계
+### ✅ Reachability Distance
 
-### 1. **k-distance(p)**  
-- \( p \)에서 k번째로 가까운 이웃까지의 거리
+```markdown
+$$
+\text{reach\_dist}_k(p, o) = \max(\text{k-distance}(o), \text{dist}(p, o))
+$$
+```
 
-### 2. **Reachability Distance**  
-- \( \text{reach-dist}_k(p, o) = \max(\text{k-distance}(o), \text{dist}(p, o)) \)  
-- 즉, 너무 가까운 이웃은 k-distance로 보정하여 거리 계산
+- 너무 가까운 이웃은 k-distance로 보정
 
-### 3. **Local Reachability Density (LRD)**  
-- \( \text{LRD}_k(p) = \left( \frac{1}{\frac{1}{|N_k(p)|} \sum_{o \in N_k(p)} \text{reach-dist}_k(p, o)} \right) \)  
-- 이웃들과의 평균 도달 거리의 역수 → 밀도가 높을수록 값이 큼
+---
 
-### 4. **LOF 점수 계산**  
-- 이웃들의 LRD 평균을 \( p \)의 LRD로 나눈 값  
-- LOF가 1보다 크면 주변보다 밀도가 낮다는 의미 → 이상값 가능성 높음
+### ✅ Local Reachability Density (LRD)
+
+```markdown
+$$
+\text{LRD}_k(p) = \left( \frac{1}{\frac{1}{|N_k(p)|} \sum_{o \in N_k(p)} \text{reach\_dist}_k(p, o)} \right)
+$$
+```
+
+- 이웃들과의 평균 도달 거리의 역수  
+- 밀도가 높을수록 LRD 값이 큼
+
+---
+
+## 💡 마크다운에서 수식 깨짐 방지 팁
+
+- **블로그나 노트 앱**에서는 `$$ ... $$`로 감싸면 블록 수식으로 잘 보입니다.
+- **GitHub README**에서는 LaTeX 수식이 기본적으로 지원되지 않으므로 이미지로 대체하거나 HTML로 변환해야 합니다.
+- **Jupyter Notebook**이나 **Obsidian**, **Typora** 같은 마크다운 지원 툴에서는 위 방식이 잘 작동합니다.
+
+---
+
+혹시 사용하는 플랫폼이나 툴이 있다면, 거기에 맞게 수식이 잘 보이도록 도와줄게요!
 
 ---
 
