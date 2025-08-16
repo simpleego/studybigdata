@@ -76,50 +76,23 @@ plt.show()
 
 ### ✅ LOF 점수 계산
 
-```markdown
-![LOF 공식](https://latex.codecogs.com/png.image?\dpi{120}\text{LOF}_k(p)=\frac{1}{|N_k(p)|}\sum_{o\in N_k(p)}\frac{\text{LRD}_k(o)}{\text{LRD}_k(p)})
-```
-
-- \( p \): 대상 데이터 포인트  
-- \( N_k(p) \): \( p \)의 k-최근접 이웃  
-- \( \text{LRD}_k(p) \): \( p \)의 Local Reachability Density
-
----
+<img width="889" height="304" alt="image" src="https://github.com/user-attachments/assets/0b6af52a-e5c8-4308-83d0-fa5acf0056a7" />
 
 ### ✅ Reachability Distance
 
-```markdown
-$$
-\text{reach\_dist}_k(p, o) = \max(\text{k-distance}(o), \text{dist}(p, o))
-$$
-```
+<img width="650" height="60" alt="image" src="https://github.com/user-attachments/assets/1558aba2-c895-41ac-896f-910f6ee6ef50" />
 
-- 너무 가까운 이웃은 k-distance로 보정
+- 즉, 너무 가까운 이웃은 k-distance로 보정하여 거리 계산
 
 ---
 
 ### ✅ Local Reachability Density (LRD)
 
-```markdown
-$$
-\text{LRD}_k(p) = \left( \frac{1}{\frac{1}{|N_k(p)|} \sum_{o \in N_k(p)} \text{reach\_dist}_k(p, o)} \right)
-$$
-```
+<img width="449" height="92" alt="image" src="https://github.com/user-attachments/assets/88d4576b-206a-404b-9208-102a8ce251aa" />
 
-- 이웃들과의 평균 도달 거리의 역수  
-- 밀도가 높을수록 LRD 값이 큼
 
----
-
-## 💡 마크다운에서 수식 깨짐 방지 팁
-
-- **블로그나 노트 앱**에서는 `$$ ... $$`로 감싸면 블록 수식으로 잘 보입니다.
-- **GitHub README**에서는 LaTeX 수식이 기본적으로 지원되지 않으므로 이미지로 대체하거나 HTML로 변환해야 합니다.
-- **Jupyter Notebook**이나 **Obsidian**, **Typora** 같은 마크다운 지원 툴에서는 위 방식이 잘 작동합니다.
-
----
-
-혹시 사용하는 플랫폼이나 툴이 있다면, 거기에 맞게 수식이 잘 보이도록 도와줄게요!
+- 이웃들의 LRD 평균을 𝑝의 LRD로 나눈 값
+- LOF가 1보다 크면 주변보다 밀도가 낮다는 의미 → 이상값 가능성 높음
 
 ---
 
