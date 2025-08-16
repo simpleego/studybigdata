@@ -77,9 +77,7 @@ plt.show()
 ### ✅ LOF 점수 계산
 
 ```markdown
-$$
-\text{LOF}_k(p) = \frac{1}{|N_k(p)|} \sum_{o \in N_k(p)} \frac{\text{LRD}_k(o)}{\text{LRD}_k(p)}
-$$
+![LOF 공식](https://latex.codecogs.com/png.image?\dpi{120}\text{LOF}_k(p)=\frac{1}{|N_k(p)|}\sum_{o\in N_k(p)}\frac{\text{LRD}_k(o)}{\text{LRD}_k(p)})
 ```
 
 - \( p \): 대상 데이터 포인트  
