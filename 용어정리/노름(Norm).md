@@ -70,7 +70,7 @@ $\text{Normalized vector} = \frac{\vec{x}}{\|\vec{x}\|}$
 
 **수식 정리**  
 ```math
-L1 Norm  :   ||x||_1 = \sum_{i=1}^{n} |x_i|
+$$L1 Norm  :   ||x||_1 = \sum_{i=1}^{n} |x_i|$$
 ```  
 ```math
 L2 Norm  : ||x||_2 = \sqrt{\sum_{i=1}^{n} x_i^2}
