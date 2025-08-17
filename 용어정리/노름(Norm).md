@@ -68,19 +68,15 @@ $\text{Normalized vector} = \frac{\vec{x}}{\|\vec{x}\|}$
 | 특징 | 희소성 유지, 이상치에 덜 민감 | 부드러운 최적화, 이상치에 민감 |
 | 사용 예 | Lasso Regression, 희소 모델 | Ridge Regression, 일반적인 거리 계산 |
 
-**수식 정리**
+**수식 정리**  
  L1 Norm  : 
  ```math
 ||x||_1 = \sum_{i=1}^{n} |x_i|
 ```
-
- 
- L2 Norm  : 
+L2 Norm  : 
  ```math
 ||x||_2 = \sqrt{\sum_{i=1}^{n} x_i^2}
 ```
-
-
 ---
 
 ## ✏️ 예시: 벡터 \(\vec{x} = [3, 4]\)
