@@ -69,11 +69,9 @@ $\text{Normalized vector} = \frac{\vec{x}}{\|\vec{x}\|}$
 | 사용 예 | Lasso Regression, 희소 모델 | Ridge Regression, 일반적인 거리 계산 |
 
 **수식 정리**  
-$$
-```math
+\``math`
 L1 Norm  :   ||x||_1 = \sum_{i=1}^{n} |x_i|
 ```
-$$
 
 ```math
 L2 Norm  : ||x||_2 = \sqrt{\sum_{i=1}^{n} x_i^2}
