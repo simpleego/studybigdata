@@ -21,15 +21,12 @@
 - 3년차: -10%
 
 #### 1️⃣ 산술평균 계산  
-![수식](https://latex.codecogs.com/png.image?\dpi{110}\frac{10+20+(-10)}{3}=\frac{20}{3}\approx6.67\%)
+![수식](https://latex.codecogs.com/png.image?\dpi{300}\frac{10+20+(-10)}{3}=\frac{20}{3}\approx6.67\%)
 
 #### 2️⃣ 기하평균 계산  
 먼저 수익률을 **성장 계수**로 바꿔야 해요:  
 - 1.10, 1.20, 0.90
-
-  기하평균 = (1.10 × 1.20 × 0.90)^(1/3) ≈ (1.188)^(1/3) ≈ 1.058
-
-![기하평균](https://latex.codecogs.com/png.image?\dpi{110}\text{기하평균}=\sqrt[3]{1.10\times1.20\times0.90}\approx\sqrt[3]{1.188}\approx1.058)
+![수식](https://latex.codecogs.com/png.image?\dpi{300}\text{기하평균}=\sqrt[3]{1.10\times1.20\times0.90}\approx\sqrt[3]{1.188}\approx1.058)
 
 → 실제 평균 수익률은 약 **5.8%**
 
