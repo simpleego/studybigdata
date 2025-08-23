@@ -21,11 +21,11 @@
 - 3년차: -10%
 
 #### 1️⃣ 산술평균 계산  
-<div style="text-align: left;">
 ```math
+<div style="text-align: left;">
 \frac{10 + 20 + (-10)}{3} = \frac{20}{3} ≈ 6.67\%
-```
 </div>
+```
 
 #### 2️⃣ 기하평균 계산  
 ```math
