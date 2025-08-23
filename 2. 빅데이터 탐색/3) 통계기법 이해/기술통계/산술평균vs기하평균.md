@@ -24,7 +24,7 @@
 ![수식](https://latex.codecogs.com/png.image?\dpi{200}\frac{10+20+(-10)}{3}=\frac{20}{3}\approx6.67\%)
 
 #### 2️⃣ 기하평균 계산  
-```
+```math
 $$
 \sqrt[3]{1.10 \times 1.20 \times 0.90} \approx \sqrt[3]{1.188} \approx 1.058
 $$
