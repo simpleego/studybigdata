@@ -26,7 +26,7 @@
 #### 2️⃣ 기하평균 계산  
 먼저 수익률을 **성장 계수**로 바꿔야 해요:  
 - 1.10, 1.20, 0.90  
-![기하평균](https://latex.codecogs.com/png.image?\dpi{110}\text{기하평균}=\sqrt[3]{1.10\times1.20\times0.90}\approx\sqrt[3]{1.188}\approx1.058)
+![기하평균](https://latex.codecogs.com/png.image?\dpi{110}\text{기하평균}=\sqrt[3]{1.10\times1.20\times0.90}\approx\sqrt[3]{1.188}\approx1.058)  
 
 → 실제 평균 수익률은 약 **5.8%**
 
