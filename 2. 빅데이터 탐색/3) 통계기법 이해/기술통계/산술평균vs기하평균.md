@@ -24,7 +24,7 @@
 ![수식](https://latex.codecogs.com/png.image?\dpi{200}\frac{10+20+(-10)}{3}=\frac{20}{3}\approx6.67\%)
 
 #### 2️⃣ 기하평균 계산  
-![기하평균](https://latex.codecogs.com/png.image?\dpi{200}\text{기하평균}=\sqrt[3]{1.10\times1.20\times0.90}\approx\sqrt[3]{1.188}\approx1.058)
+![수식](https://latex.codecogs.com/png.image?\dpi{200}\text{기하평균}=\sqrt[3]{1.10\times1.20\times0.90}\approx\sqrt[3]{1.188}\approx1.058)
 
 먼저 수익률을 **성장 계수**로 바꿔야 해요:  
 - 1.10, 1.20, 0.90
